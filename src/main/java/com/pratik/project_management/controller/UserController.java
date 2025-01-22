@@ -14,6 +14,11 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @GetMapping("/test")
+    public String sample(){
+        return "test";
+    }
+
     @PostMapping
     public ResponseEntity<User> createUser(User user){
         User savedUser = userService.saveUser(user);
