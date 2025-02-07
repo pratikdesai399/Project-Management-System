@@ -1,11 +1,13 @@
 package com.pratik.project_management.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
-@Getter
 @Entity
 @Table
 public class Users {
@@ -50,6 +52,37 @@ public class Users {
     private String role;
 
     private LocalDateTime createdAt = LocalDateTime.now();
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public Users(Long userId) {
+        this.userId = userId;
+    }
+
+    public Users() {
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
 
     public Users(Long userId, String name, String email, String password, String role) {
         this.userId = userId;
